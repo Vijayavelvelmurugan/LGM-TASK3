@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<script>
+    function doit(event){
+        event.preventDefault();
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var number = document.getElementById("number").value;
+        var sem = document.getElementById("sem").value;
+        var course = document.getElementById("courses").value;
+
+        var form = "Your Information <br>" +
+        "Name: " + name + "<br>" + "Email: " + email + "<br>" +
+        "Phone Number: " + number + "<br>" + "Semester: " + sem + "<br>" +
+        "Course: " + course;
+        document.querySelector(".result").style.display='block';
+        document.querySelector('.result').innerHTML = form;
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("number").value = "";
+        document.getElementById("sem").value = "";
+        document.getElementById("courses").value = "";
+    }
+</script>
+<style>
+    *{
+        margin: 0;
+        background-color: lightblue;
+    }
+    .result{
+        height: 200px;
+        width: 350px;
+    }
+    h1{
+        background-color: black;
+        color: blue;
+        text-align: center;
+    }
+    form{
+        text-align: center;
+        border: 5px solid blue;
+       background-color: grey;
+       padding-top: 100px;
+    }
+</style>
+<body>
+    <h1>STUDENT REGISTRATION FORM</h1>
+    <div>
+        <fieldset>
+        <form action="">
+            <label for="name">Name:</label><br>
+            <input type="text" placeholder="Enter Student name" id="name"><br>
+            <label for="email">Email</label><br>
+            <input type="text" placeholder="Enter Student Email ID" id="email"><br>
+            <label for="number">Phone Number:</label><br>
+            <input type="text" placeholder="Phone number" id="number"><br>
+            <label for="sem">Semester:</label><br>
+            <input type="text" placeholder="Semester" id="sem"><br>
+            <label for="courses">Courses:</label><br>
+            <select id="courses">
+                <option value="B.Tech or B.E">B.Tech or B.E</option>
+                <option value="BCA">BCA</option>
+                <option value="LLB">LLB</option>
+                <option value="BSC">BSC</option>
+                <option value="BA">BA</option>
+            </select><br>
+            <button onclick="doit(event)" value="submit">Submit</button>
+            <input type="reset" value="Reset">
+        </form>
+    </fieldset>
+    </div>
+    <div>
+        <div class="result">
+        </div>
+    </div>
+</body>
+</html>
